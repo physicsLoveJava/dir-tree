@@ -1,6 +1,6 @@
 # dir-tree
 
-**dir-tree** is a simple directory tree scanner for node, which supports directory level scanner, filters, display tree structure and so on.
+**dir-tree** is a simple directory tree scanner for node, which supports directory level update, filters, display tree structure and so on.
 
 # Install
 

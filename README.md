@@ -15,7 +15,7 @@ Assumed you have the node env.
 ## Find
 You can use **find** function as a try.
 ```javascript
-var dirTree = require('dir-tree');
+var dirTree = require('dir-tree-scanner');
 var path = './test';
 dirTree.find(path)
     .then(function(result){
@@ -28,7 +28,7 @@ dirTree.find(path)
 ```
 To make result more intuitive, you can use the **display** function.
 ```javascript
-var dirTree = require('dir-tree');
+var dirTree = require('dir-tree-scanner');
 var path = './test';
 dirTree.find(path)
     .then(function(result){
@@ -41,7 +41,7 @@ dirTree.find(path)
 ```
 You can use filters as well.
 ```javascript
-var dirTree = require('dir-tree');
+var dirTree = require('dir-tree-scanner');
 var path = './test';
 dirTree.find(path, {
       file: ['.js', '.md'] 

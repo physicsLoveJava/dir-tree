@@ -62,4 +62,4 @@ function doTest(testFile) {
       reject();
     });
   });
-};
+}

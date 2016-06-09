@@ -1,6 +1,6 @@
 {
-  "name": "dir-tree",
-  "version": "1.0.0",
+  "name": "dir-tree-scanner",
+  "version": "1.0.3",
   "description": "directory tree scanner",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,8 @@
     "mocha": "^2.5.3",
     "q": "^1.4.1",
     "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "q": "^1.4.1"
   }
 }

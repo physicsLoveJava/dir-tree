@@ -61,7 +61,7 @@ describe('dir-tree', function(){
       var path = './for-test/b';
       return dir_tree.subDirectory(path, options).should.eventually.have.then(function(subDirs){
         expect(subDirs).have.deep.property('parent', path);
-        expect(subDirs).have.deep.property('children').have.length(0);
+        expect(subDirs).have.deep.property('children').have.length(1);
       }, function(err){
         expect(err).to.be.null;
       })

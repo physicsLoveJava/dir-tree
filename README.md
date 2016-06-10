@@ -8,7 +8,7 @@
 
 Assumed you have the node env.
 ```javascript
-  npm i dir-tree
+  npm i dir-tree-scanner
 ```
 
 # Usage

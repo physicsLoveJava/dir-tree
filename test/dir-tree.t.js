@@ -22,9 +22,9 @@ describe('dir-tree', function(){
 
 
     it('should find all the sub directories', function(){
-      var path = './for-test';
-      return dir_tree.subDirectory(path, options).should.eventually.have.then(function(subDirs){
-          expect(subDirs).have.deep.property('parent', path);
+      var fPath = path.join(__dirname, './for-test');
+      return dir_tree.subDirectory(fPath, options).should.eventually.have.then(function(subDirs){
+          expect(subDirs).have.deep.property('parent', fPath);
           expect(subDirs).have.deep.property('children').have.length(6);
         }, function(err){
           expect(err).to.be.null;
@@ -32,12 +32,12 @@ describe('dir-tree', function(){
     });
 
     it('should filter by options suffix array', function(){
-      var path = './for-test';
+      var fPath = path.join(__dirname, './for-test');
       var forOptions = {
         file: ['.txt', '.js', '.md']
       };
-      return dir_tree.subDirectory(path, forOptions).should.eventually.have.then(function(subDirs){
-        expect(subDirs).have.deep.property('parent', path);
+      return dir_tree.subDirectory(fPath, forOptions).should.eventually.have.then(function(subDirs){
+        expect(subDirs).have.deep.property('parent', fPath);
         expect(subDirs).have.deep.property('children').have.length(5);
       }, function(err){
         expect(err).to.be.null;
@@ -45,12 +45,12 @@ describe('dir-tree', function(){
     });
 
     it('should filter by options suffix regexp', function(){
-      var path = './for-test';
+      var fPath =path.join(__dirname, './for-test');
       var forOptions = {
         file: /(\.txt|\.js|\.md)$/
       };
-      return dir_tree.subDirectory(path, forOptions).should.eventually.have.then(function(subDirs){
-        expect(subDirs).have.deep.property('parent', path);
+      return dir_tree.subDirectory(fPath, forOptions).should.eventually.have.then(function(subDirs){
+        expect(subDirs).have.deep.property('parent', fPath);
         expect(subDirs).have.deep.property('children').have.length(5);
       }, function(err){
         expect(err).to.be.null;
@@ -58,9 +58,9 @@ describe('dir-tree', function(){
     });
 
     it('should return an empty array where input directory is empty', function(){
-      var path = './for-test/b';
-      return dir_tree.subDirectory(path, options).should.eventually.have.then(function(subDirs){
-        expect(subDirs).have.deep.property('parent', path);
+      var fPath = path.join(__dirname, './for-test/b');
+      return dir_tree.subDirectory(fPath, options).should.eventually.have.then(function(subDirs){
+        expect(subDirs).have.deep.property('parent', fPath);
         expect(subDirs).have.deep.property('children').have.length(1);
       }, function(err){
         expect(err).to.be.null;
@@ -68,8 +68,8 @@ describe('dir-tree', function(){
     });
 
     it('should throw an error when input is file', function(){
-      var path = './for-test/c.txt';
-      return dir_tree.subDirectory(path, options).should.eventually.have.then(function(subDirs){
+      var fPath = path.join(__dirname, './for-test/c.txt');
+      return dir_tree.subDirectory(fPath, options).should.eventually.have.then(function(subDirs){
         expect(subDirs).to.be.null;
       }, function(err){
         expect(err).to.be.not.null;
@@ -105,8 +105,8 @@ describe('dir-tree', function(){
 
   describe('#_checkIfDirectory', function(){
     it('should false when input is not a directory', function(){
-      var path = './for-test/c.txt';
-      return dir_tree._checkIfDirectory(path).should.eventually.have.then(function(data){
+      var fPath =path.join(__dirname, './for-test/c.txt');
+      return dir_tree._checkIfDirectory(fPath).should.eventually.have.then(function(data){
         expect(data).to.be.false;
       }, function(err){
         expect(err).to.be.null;
@@ -114,8 +114,8 @@ describe('dir-tree', function(){
     });
 
     it('should true when input is a directory', function(){
-      var path = './for-test/a';
-      return dir_tree._checkIfDirectory(path).should.eventually.have.then(function(data){
+      var fPath = path.join(__dirname, './for-test/a');
+      return dir_tree._checkIfDirectory(fPath).should.eventually.have.then(function(data){
         expect(data).to.be.true;
       }, function(err){
         expect(err).to.be.null;
@@ -125,7 +125,7 @@ describe('dir-tree', function(){
 
   describe('#scan', function(){
     it('should scan directory', function(){
-      var dest = path.resolve('./for-test');
+      var dest = path.join(__dirname, './for-test');
       var jqTree = {};
       return dir_tree.scan(dest).should.eventually.have.then(function(data){
         //console.log('success----data ', jqTree);
@@ -194,8 +194,8 @@ describe('dir-tree', function(){
   describe('#find()', function(){
 
     it('should find recursively', function(){
-      var path = './for-test';
-      return dir_tree.find(path, {
+      var fPath = path.join(__dirname, './for-test');
+      return dir_tree.find(fPath, {
         file: ['.js']
       }).should.eventually.have.then(function(data){
           //dir_tree.display(data.data);
@@ -211,8 +211,8 @@ describe('dir-tree', function(){
   describe('#display()', function(){
 
     it('should display the directory tree', function(){
-      var path = './for-test';
-      return dir_tree.find(path, {
+      var fPath = path.join(__dirname, './for-test');
+      return dir_tree.find(fPath, {
         file: ['.js', '.md']
       }).should.eventually.have.then(function(data){
           //dir_tree.display(data.data);

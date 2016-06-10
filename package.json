@@ -1,10 +1,10 @@
 {
   "name": "dir-tree-scanner",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "directory tree scanner",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "mocha test/*.t.js --recursive"
   },
   "keywords": ["directory tree", "display directory tree structure"],
   "repository": {

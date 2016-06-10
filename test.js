@@ -6,21 +6,14 @@ var dir_tree = require('./index.js');
 var path = require('path');
 var Q = require('q');
 var exec = require('child_process').exec;
-var colors = require('colors');
+require('colors');
 
 dir_tree.find('./test', {
-  file: /\.t\.js/
+  file: /(\.t\.js)$/
 }).then(function(srcTree){
   var testSrc = srcTree.data[0].children;
   loopTest(testSrc);
-}).progress(function(data){
-  //console.log(data);
 });
-
-//doTest('./test/dir-tree.t.js').done(function(){
-//  console.log('success');
-//});
-
 
 function loopTest(testSrc){
   if(testSrc.length > 0){
@@ -35,10 +28,7 @@ function loopTest(testSrc){
 
 function doTest(testFile) {
   return Q.Promise(function (resolve, reject) {
-    var testDir = path.join('./', testFile, '../');
-    var mochaTest = exec('mocha ' + path.basename(testFile), {
-      cwd: testDir
-    });
+    var mochaTest = exec('mocha ' + testFile);
 
     var banner = '----------------------';
     console.log((banner + path.basename(testFile) + ' start ' + banner).green);

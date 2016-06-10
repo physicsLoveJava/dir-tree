@@ -1,6 +1,6 @@
 # dir-tree 
-![Build status] (https://travis-ci.org/physicsLoveJava/dir-tree.svg?branch=master)
-![Code Climate] (https://codeclimate.com/github/physicsLoveJava/dir-tree/badges/gpa.svg)
+[![Build status] (https://travis-ci.org/physicsLoveJava/dir-tree.svg?branch=master)] (https://travis-ci.org/physicsLoveJava/dir-tree)
+[![Code Climate] (https://codeclimate.com/github/physicsLoveJava/dir-tree/badges/gpa.svg)] (https://codeclimate.com/github/physicsLoveJava/dir-tree)
 
 **dir-tree** is a simple directory tree scanner for node, which supports directory level update, filters, display tree structure and so on.
 

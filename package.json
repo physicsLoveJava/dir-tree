@@ -1,12 +1,16 @@
 {
   "name": "dir-tree-scanner",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "directory tree scanner",
   "main": "index.js",
   "scripts": {
     "test": "node test"
   },
-  "keywords": [],
+  "keywords": ["directory tree", "display directory tree structure"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/physicsLoveJava/dir-tree"
+  },
   "author": "Lu Jian",
   "license": "ISC",
   "devDependencies": {

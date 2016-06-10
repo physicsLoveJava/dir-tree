@@ -3,5 +3,8 @@ node_js:
     - "0.10"
     - "0.12"
     - iojs
+addons:
+    code_climate:
+        repo_token: d619dac44b09077567a72de7b203863517a7d976488c120a48be6c3fa173449b
 script:
    npm test

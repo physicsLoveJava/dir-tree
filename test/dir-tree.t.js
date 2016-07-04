@@ -103,26 +103,6 @@ describe('dir-tree', function(){
 
 });
 
-  describe('#_checkIfDirectory', function(){
-    it('should false when input is not a directory', function(){
-      var fPath =path.join(__dirname, './for-test/c.txt');
-      return dir_tree._checkIfDirectory(fPath).should.eventually.have.then(function(data){
-        expect(data).to.be.false;
-      }, function(err){
-        expect(err).to.be.null;
-      });
-    });
-
-    it('should true when input is a directory', function(){
-      var fPath = path.join(__dirname, './for-test/a');
-      return dir_tree._checkIfDirectory(fPath).should.eventually.have.then(function(data){
-        expect(data).to.be.true;
-      }, function(err){
-        expect(err).to.be.null;
-      });
-    });
-  });
-
   describe('#scan', function(){
     it('should scan directory', function(){
       var dest = path.join(__dirname, './for-test');

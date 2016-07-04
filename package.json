@@ -1,6 +1,6 @@
 {
   "name": "dir-tree-scanner",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "directory tree scanner",
   "main": "index.js",
   "scripts": {

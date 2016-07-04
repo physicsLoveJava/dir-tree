@@ -56,4 +56,21 @@ describe('options-util', function(){
 
     });
 
+    describe('#isOptionsFileEmpty', function(){
+
+        it('should return true when options undefined', function(){
+            util.isOptionsFileEmpty(null).should.be.true;
+            util.isOptionsFileEmpty(undefined).should.be.true;
+        })
+
+        it('should return true when options file array length is zero', function(){
+            util.isOptionsFileEmpty([]).should.be.true;
+        })
+
+        it('should return false when options file array is not empty', function(){
+            util.isOptionsFileEmpty(['.js']).should.be.false;
+        })
+
+    })
+
 });

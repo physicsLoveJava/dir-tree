@@ -59,8 +59,8 @@ describe('options-util', function(){
     describe('#isOptionsFileEmpty', function(){
 
         it('should return true when options undefined', function(){
-            util.isOptionsFileEmpty(null).should.be.true;
             util.isOptionsFileEmpty(undefined).should.be.true;
+            util.isOptionsFileEmpty(null).should.be.true;
         })
 
         it('should return true when options file array length is zero', function(){
@@ -69,6 +69,20 @@ describe('options-util', function(){
 
         it('should return false when options file array is not empty', function(){
             util.isOptionsFileEmpty(['.js']).should.be.false;
+        })
+
+    })
+
+    describe('#getDefaultOptions', function(){
+
+        it('should return the default options', function(){
+            util.getDefaultOption(null).should.have.deep.property('file')
+                .deep.equal([]);
+        })
+
+        it('should return real options when options is set', function(){
+            util.getDefaultOption({ file : [1]}).should.have.deep.property('file')
+                .deep.equal([1]);
         })
 
     })
